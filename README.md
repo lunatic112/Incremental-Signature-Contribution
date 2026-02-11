@@ -159,14 +159,6 @@ Dataset variants: `medium`, `medium-expert`, `medium-replay`
 | maze2d-medium-v1 | 4 | 2 | Position, Velocity |
 | maze2d-large-v1 | 4 | 2 | Position, Velocity |
 
-### AntMaze (RTG Mode)
-
-| Environment | State Dim | Action Dim | State Groups |
-|-------------|-----------|------------|--------------|
-| antmaze-umaze-v0 | 29 | 8 | Body, Joints, Velocities |
-| antmaze-medium-play-v0 | 29 | 8 | Body, Joints, Velocities |
-| antmaze-large-play-v0 | 29 | 8 | Body, Joints, Velocities |
-
 ## Model Architecture
 
 ![Network Architecture](assets/structure.png)
@@ -294,5 +286,6 @@ This project is released under the MIT License.
 - [Decision Transformer](https://arxiv.org/abs/2106.01345) for the foundational architecture
 - [D4RL](https://github.com/Farama-Foundation/D4RL) for offline RL benchmarks ([datasets](https://rail.eecs.berkeley.edu/datasets/offline_rl/))
 - [iisignature](https://github.com/bottler/iisignature) for path signature computation
+
 
 
