@@ -180,6 +180,8 @@ Dataset variants: `medium`, `medium-expert`, `medium-replay`
 
 ## Model Architecture
 
+![Network Architecture](assets/structure.png)
+
 ### Token Structure
 
 The model processes sequences of tokens where each timestep generates multiple specialized tokens:
@@ -203,6 +205,8 @@ For each timestep $t$, given state groups $\{G_1, G_2, ..., G_k\}$:
 2. **First-level signature** (INC): $S^{(1)}_t = \sum_{i \leq t} \Delta s_i$
 
 3. **Second-level signature** (CROSS): $\Delta S^{(2)}_t = S^{(1)}_{t-1} \otimes \Delta s_t + \frac{1}{2} \Delta s_t \otimes \Delta s_t$
+
+> **Note**: For higher-order signature terms and the general recursive expression, please refer to the paper.
 
 ### Network Architecture
 
@@ -270,6 +274,8 @@ release_ver/
 ├── eval.py           # Evaluation script
 ├── env.yml           # Conda environment specification
 ├── README.md         # This file
+├── assets/           # Images and figures
+│   └── structure.png
 ├── checkpoints/      # Saved model checkpoints
 ├── cache_sigdt/      # Preprocessed data cache
 └── d4rl_datasets/    # Downloaded D4RL datasets
