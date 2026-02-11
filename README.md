@@ -11,18 +11,6 @@ The Incremental Signature Contribution Transformer (ISCT) introduces **ISC token
 
 The ISC method decomposes path signatures into per-step contributions, enabling efficient streaming computation while preserving the expressive power of signature features. This approach captures richer temporal structure than standard position embeddings, improving performance on locomotion and navigation tasks.
 
-## Key Features
-
-- **Incremental Signature Contribution (ISC)**: Decomposes path signatures into per-step contributions for efficient sequence modeling
-- **Grouped state dimensions**: Domain-specific groupings (e.g., joint angles, velocities, body pose)
-- **Two operating modes**:
-  - **GOAL mode**: Window-level goal conditioning (locomotion tasks)
-  - **RTG mode**: Per-step return-to-go conditioning (navigation tasks)
-- **Automatic mode detection**: Selects appropriate mode based on environment type
-- **Z-score normalization**: Standardized observations and actions for stable training
-- **Flash Attention support**: Optimized attention computation on CUDA devices
-- **D4RL integration**: Direct support for MuJoCo, Maze2D, and AntMaze benchmarks
-
 ## Installation
 
 ### Using Conda (Recommended)
