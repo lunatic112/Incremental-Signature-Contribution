@@ -1,19 +1,19 @@
-# Signature Decision Transformer
+# Incremental Signature Contribution Transformer (ISCT)
 
-A novel approach to offline reinforcement learning that leverages **path signature theory** to capture temporal dynamics in sequential decision-making tasks. This implementation extends the Decision Transformer architecture with signature-based token representations, providing enhanced modeling of trajectory evolution.
+A novel approach to offline reinforcement learning that leverages **path signature theory** to capture temporal dynamics in sequential decision-making tasks. This implementation extends the Decision Transformer architecture with the **Incremental Signature Contribution (ISC)** method, providing enhanced modeling of trajectory evolution.
 
 ## Overview
 
-The Signature Decision Transformer (Sig-DT) introduces **incremental signature tokens** that encode the evolution of state trajectories using concepts from rough path theory:
+The Incremental Signature Contribution Transformer (ISCT) introduces **ISC tokens** that encode the evolution of state trajectories using concepts from rough path theory:
 
-- **INC tokens**: First-level signature increments (path differentials)
-- **CROSS tokens**: Second-level signature terms capturing cross-correlations between state dimensions
+- **INC tokens**: First-level incremental signature contributions (path differentials)
+- **CROSS tokens**: Second-level signature contributions capturing cross-correlations between state dimensions
 
-This approach captures richer temporal structure than standard position embeddings, improving performance on locomotion and navigation tasks.
+The ISC method decomposes path signatures into per-step contributions, enabling efficient streaming computation while preserving the expressive power of signature features. This approach captures richer temporal structure than standard position embeddings, improving performance on locomotion and navigation tasks.
 
 ## Key Features
 
-- **Signature-based sequence representation**: Encodes trajectory dynamics using path signatures
+- **Incremental Signature Contribution (ISC)**: Decomposes path signatures into per-step contributions for efficient sequence modeling
 - **Grouped state dimensions**: Domain-specific groupings (e.g., joint angles, velocities, body pose)
 - **Two operating modes**:
   - **GOAL mode**: Window-level goal conditioning (locomotion tasks)
@@ -31,7 +31,7 @@ Create and activate the environment using the provided `env.yml`:
 
 ```bash
 conda env create -f env.yml
-conda activate sig-dt
+conda activate isct
 ```
 
 > **Note**: If `iisignature` fails to install due to numpy version conflicts, install it separately with:
@@ -76,7 +76,7 @@ d4rl_datasets/
 
 ### Training
 
-Train a Signature Decision Transformer on D4RL datasets:
+Train an Incremental Signature Contribution Transformer on D4RL datasets:
 
 ```bash
 # MuJoCo Locomotion (uses GOAL mode automatically)
@@ -196,17 +196,17 @@ The model processes sequences of tokens where each timestep generates multiple s
 [ACTION_prev] [RTG_0] [OBS_0] [INC_0] [CROSS_0] [RTG_1] [OBS_1] [INC_1] [CROSS_1] ... [RTG_T] [OBS_T] [INC_T] [CROSS_T]
 ```
 
-### Signature Computation
+### Incremental Signature Contribution (ISC)
 
-For each timestep $t$, given state groups $\{G_1, G_2, ..., G_k\}$:
+The ISC method decomposes the path signature into per-step contributions. For each timestep $t$, given state groups $\{G_1, G_2, ..., G_k\}$:
 
 1. **Increment**: $\Delta s_t^{(g)} = s_t^{(g)} - s_{t-1}^{(g)}$ for group $g$
 
-2. **First-level signature** (INC): $S^{(1)}_t = \sum_{i \leq t} \Delta s_i$
+2. **First-level ISC** (INC token): $S^{(1)}_t = \sum_{i \leq t} \Delta s_i$
 
-3. **Second-level signature** (CROSS): $\Delta S^{(2)}_t = S^{(1)}_{t-1} \otimes \Delta s_t + \frac{1}{2} \Delta s_t \otimes \Delta s_t$
+3. **Second-level ISC** (CROSS token): $\Delta S^{(2)}_t = S^{(1)}_{t-1} \otimes \Delta s_t + \frac{1}{2} \Delta s_t \otimes \Delta s_t$
 
-> **Note**: For higher-order signature terms and the general recursive expression, please refer to the paper.
+> **Note**: For higher-order ISC terms and the general recursive expression, please refer to the paper.
 
 ### Network Architecture
 
@@ -269,25 +269,26 @@ Episode Length: mean=1000.0
 ## Project Structure
 
 ```
-release_ver/
 ├── train.py          # Training script
 ├── eval.py           # Evaluation script
 ├── env.yml           # Conda environment specification
 ├── README.md         # This file
-├── assets/           # Images and figures
-│   └── structure.png
-├── checkpoints/      # Saved model checkpoints
-├── cache_sigdt/      # Preprocessed data cache
-└── d4rl_datasets/    # Downloaded D4RL datasets
+└── assets/           # Images and figures
+    └── structure.png
 ```
+
+The following directories will be created during training/evaluation:
+- `checkpoints/` - Saved model checkpoints
+- `cache_sigdt/` - Preprocessed data cache
+- `d4rl_datasets/` - Downloaded D4RL datasets
 
 ## Citation
 
 If you find this work useful, please consider citing:
 
 ```bibtex
-@article{sig_decision_transformer,
-  title={Signature Decision Transformer: Leveraging Path Signatures for Offline Reinforcement Learning},
+@article{isct,
+  title={Incremental Signature Contribution Transformer for Offline Reinforcement Learning},
   author={...},
   journal={...},
   year={2026}
