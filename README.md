@@ -190,9 +190,9 @@ The ISC method decomposes the path signature into per-step contributions. For ea
 
 1. **Increment**: $\Delta s_t^{(g)} = s_t^{(g)} - s_{t-1}^{(g)}$ for group $g$
 
-2. **First-level ISC** (INC token): $S^{(1)}_t = \sum_{i \leq t} \Delta s_i$
+2. **First-level ISC** (INC token): $S^{(1)}\_t = \sum_{i \leq t} \Delta s_i$
 
-3. **Second-level ISC** (CROSS token): $\Delta S^{(2)}_t = S^{(1)}_{t-1} \otimes \Delta s_t + \frac{1}{2} \Delta s_t \otimes \Delta s_t$
+3. **Second-level ISC** (CROSS token): $\Delta S^{(2)}\_t = S^{(1)}_{t-1} \otimes \Delta s_t + \frac{1}{2} \Delta s_t \otimes \Delta s_t$
 
 > **Note**: For higher-order ISC terms and the general recursive expression, please refer to the paper.
 
@@ -293,3 +293,4 @@ This project is released under the MIT License.
 - [Decision Transformer](https://arxiv.org/abs/2106.01345) for the foundational architecture
 - [D4RL](https://github.com/Farama-Foundation/D4RL) for offline RL benchmarks ([datasets](https://rail.eecs.berkeley.edu/datasets/offline_rl/))
 - [iisignature](https://github.com/bottler/iisignature) for path signature computation
+
