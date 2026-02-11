@@ -8,6 +8,7 @@ The Incremental Signature Contribution Transformer (ISCT) introduces **ISC token
 
 - **INC tokens**: First-level incremental signature contributions (path differentials)
 - **CROSS tokens**: Second-level signature contributions capturing cross-correlations between state dimensions
+- **Token of higher level**: Higher level signature contributions capturing high-order corrlations, for exact expression, see our paper
 
 The ISC method decomposes path signatures into per-step contributions, enabling efficient streaming computation while preserving the expressive power of signature features. This approach captures richer temporal structure than standard position embeddings, improving performance on locomotion and navigation tasks.
 
@@ -293,4 +294,5 @@ This project is released under the MIT License.
 - [Decision Transformer](https://arxiv.org/abs/2106.01345) for the foundational architecture
 - [D4RL](https://github.com/Farama-Foundation/D4RL) for offline RL benchmarks ([datasets](https://rail.eecs.berkeley.edu/datasets/offline_rl/))
 - [iisignature](https://github.com/bottler/iisignature) for path signature computation
+
 
