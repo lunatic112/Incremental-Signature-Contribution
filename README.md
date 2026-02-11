@@ -263,7 +263,7 @@ The following directories will be created during training/evaluation:
 - `cache_sigdt/` - Preprocessed data cache
 - `d4rl_datasets/` - Downloaded D4RL datasets
 
-## Citation
+## Citation(Under Work)
 
 If you find this work useful, please consider citing:
 
@@ -286,6 +286,7 @@ This project is released under the MIT License.
 - [Decision Transformer](https://arxiv.org/abs/2106.01345) for the foundational architecture
 - [D4RL](https://github.com/Farama-Foundation/D4RL) for offline RL benchmarks ([datasets](https://rail.eecs.berkeley.edu/datasets/offline_rl/))
 - [iisignature](https://github.com/bottler/iisignature) for path signature computation
+
 
 
 
