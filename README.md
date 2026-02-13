@@ -268,11 +268,14 @@ The following directories will be created during training/evaluation:
 If you find this work useful, please consider citing:
 
 ```bibtex
-@article{isct,
-  title={Incremental Signature Contribution Transformer for Offline Reinforcement Learning},
-  author={...},
-  journal={...},
-  year={2026}
+@misc{zhao2026pathsignaturessequentialmodeling,
+      title={From Path Signatures to Sequential Modeling: Incremental Signature Contributions for Offline RL}, 
+      author={Ziyi Zhao and Qingchuan Li and Yuxuan Xu},
+      year={2026},
+      eprint={2602.11805},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2602.11805}, 
 }
 ```
 
@@ -286,6 +289,7 @@ This project is released under the MIT License.
 - [Decision Transformer](https://arxiv.org/abs/2106.01345) for the foundational architecture
 - [D4RL](https://github.com/Farama-Foundation/D4RL) for offline RL benchmarks ([datasets](https://rail.eecs.berkeley.edu/datasets/offline_rl/))
 - [iisignature](https://github.com/bottler/iisignature) for path signature computation
+
 
 
 
