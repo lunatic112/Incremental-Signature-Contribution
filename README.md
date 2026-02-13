@@ -1,6 +1,6 @@
 # Incremental Signature Contribution Transformer (ISCT)
 
-A novel approach to offline reinforcement learning that leverages **path signature theory** to capture temporal dynamics in sequential decision-making tasks. This implementation extends the Decision Transformer architecture with the **Incremental Signature Contribution (ISC)** method, providing enhanced modeling of trajectory evolution.
+A novel approach to offline reinforcement learning that leverages **path signature theory** to capture temporal dynamics in sequential decision-making tasks. This implementation extends the Decision Transformer architecture with the **Incremental Signature Contribution (ISC)** method, providing enhanced modeling of trajectory evolution. Our paper: <https://arxiv.org/abs/2602.11805>.
 
 ## Overview
 
@@ -263,7 +263,7 @@ The following directories will be created during training/evaluation:
 - `cache_sigdt/` - Preprocessed data cache
 - `d4rl_datasets/` - Downloaded D4RL datasets
 
-## Citation(Under Work)
+## Citation
 
 If you find this work useful, please consider citing:
 
@@ -289,6 +289,7 @@ This project is released under the MIT License.
 - [Decision Transformer](https://arxiv.org/abs/2106.01345) for the foundational architecture
 - [D4RL](https://github.com/Farama-Foundation/D4RL) for offline RL benchmarks ([datasets](https://rail.eecs.berkeley.edu/datasets/offline_rl/))
 - [iisignature](https://github.com/bottler/iisignature) for path signature computation
+
 
 
 
